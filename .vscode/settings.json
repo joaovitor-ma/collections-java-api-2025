@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "src/main.java/list/Pesquisa",
+        "src/main.java/list/Ordenacao",
         "src/main.java/list/OperacoesBasicas",
-        "src/main.java/list/Ordenacao"
+        "src/main.java/set/OperacoesBasicas"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
