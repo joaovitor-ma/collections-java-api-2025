@@ -82,5 +82,17 @@ public class ListaTarefas {
         listaTarefas.adicionarTarefa("Tarefa 5", true);
 
         listaTarefas.exibirTarefas();
+        listaTarefas.contarTarefas();
+
+        System.out.println(listaTarefas.obterTarefasConcluidas());
+        System.out.println(listaTarefas.obterTarefasPendentes());
+        
+        listaTarefas.marcarTarefaConcluida("Tarefa 4");
+        System.out.println(listaTarefas.obterTarefasPendentes());
+        
+        listaTarefas.marcarTarefaPendente("Tarefa 1");
+        System.out.println(listaTarefas.obterTarefasPendentes());
+
+        listaTarefas.exibirTarefas();
     }
 }
