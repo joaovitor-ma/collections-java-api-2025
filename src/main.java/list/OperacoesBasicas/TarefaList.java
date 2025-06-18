@@ -1,7 +1,7 @@
-public class Tarefa {
+public class TarefaList {
     private String descricao;
 
-    public Tarefa(String descricao) {
+    public TarefaList(String descricao) {
         this.descricao = descricao;
     }
 
