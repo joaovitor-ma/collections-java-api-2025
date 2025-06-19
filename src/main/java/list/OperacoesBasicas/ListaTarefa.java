@@ -4,32 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaTarefa {
-    private List<TarefaList> tarefaList;
+    private List<Tarefa> tarefa;
 
     public ListaTarefa() {
-        this.tarefaList = new ArrayList<>();
+        this.tarefa = new ArrayList<>();
     }
 
     public void adicionarTarefa(String descricao) {
-        tarefaList.add(new TarefaList(descricao));
+        tarefa.add(new Tarefa(descricao));
     }
 
     public void removerTarefa(String descricao) {
-        List<TarefaList> tarefasParaRemover = new ArrayList<>();
-        for (TarefaList tarefa : tarefaList) {
+        List<Tarefa> tarefasParaRemover = new ArrayList<>();
+        for (Tarefa tarefa : tarefa) {
             if (tarefa.getDescricao().equalsIgnoreCase(descricao)) {
                 tarefasParaRemover.add(tarefa);
             }
         }
-        tarefaList.removeAll(tarefasParaRemover);
+        tarefa.removeAll(tarefasParaRemover);
     }
 
     public int obterNumeroTotalTarefas() {
-        return tarefaList.size();
+        return tarefa.size();
     }
 
     public void obterDescricoesTarefas() {
-        System.out.println(tarefaList);
+        System.out.println(tarefa);
     }
 
     public static void main(String[] args) {

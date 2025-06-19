@@ -2,20 +2,20 @@ package main.java.set.Ordenacao;
 
 import java.util.Comparator;
 
-public class AlunoSet implements Comparable<AlunoSet> {
+public class Aluno implements Comparable<Aluno> {
     // atributos
     private long matricula;
     private String nome;
     private double nota;
 
-    public AlunoSet(long matricula, String nome, double nota) {
+    public Aluno(long matricula, String nome, double nota) {
         this.matricula = matricula;
         this.nome = nome;
         this.nota = nota;
     }
 
     @Override
-    public int compareTo(AlunoSet p) {
+    public int compareTo(Aluno p) {
         return nome.compareTo(p.getNome());
     }
 
@@ -64,17 +64,17 @@ public class AlunoSet implements Comparable<AlunoSet> {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        AlunoSet other = (AlunoSet) obj;
+        Aluno other = (Aluno) obj;
         if (matricula != other.matricula)
             return false;
         return true;
     }
 }
 
-class ComparatorPorNota implements Comparator<AlunoSet> {
+class ComparatorPorNota implements Comparator<Aluno> {
 
     @Override
-    public int compare(AlunoSet a1, AlunoSet a2) {
+    public int compare(Aluno a1, Aluno a2) {
         return Double.compare(a1.getNota(), a2.getNota());
     }
     

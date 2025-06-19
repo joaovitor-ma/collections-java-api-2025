@@ -2,13 +2,13 @@ package main.java.set.Ordenacao;
 
 import java.util.Comparator;
 
-public class ProdutoSet implements Comparable<ProdutoSet> {
+public class Produto implements Comparable<Produto> {
     private long codigo;
     private String nome;
     private double preco;
     private int quantidade;
     
-    public ProdutoSet(long codigo, String nome, double preco, int quantidade) {
+    public Produto(long codigo, String nome, double preco, int quantidade) {
         this.codigo = codigo;
         this.nome = nome;
         this.preco = preco;
@@ -16,7 +16,7 @@ public class ProdutoSet implements Comparable<ProdutoSet> {
     }
 
     @Override
-    public int compareTo(ProdutoSet p) {
+    public int compareTo(Produto p) {
         return nome.compareToIgnoreCase(p.getNome());
     }
 
@@ -74,26 +74,26 @@ public class ProdutoSet implements Comparable<ProdutoSet> {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        ProdutoSet other = (ProdutoSet) obj;
+        Produto other = (Produto) obj;
         if (codigo != other.codigo)
             return false;
         return true;
     }    
 }
 
-class ComparatorPorPreco implements Comparator<ProdutoSet> {
+class ComparatorPorPreco implements Comparator<Produto> {
 
     @Override
-    public int compare(ProdutoSet p1, ProdutoSet p2) {
+    public int compare(Produto p1, Produto p2) {
         return Double.compare(p1.getPreco(), p2.getPreco());
     }
     
 }
 
-class ComparatorPorQuantidade implements Comparator<ProdutoSet> {
+class ComparatorPorQuantidade implements Comparator<Produto> {
 
     @Override
-    public int compare(ProdutoSet p1, ProdutoSet p2) {
+    public int compare(Produto p1, Produto p2) {
         return Integer.compare(p1.getQuantidade(), p2.getQuantidade());
     }
     

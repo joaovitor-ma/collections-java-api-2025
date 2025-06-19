@@ -1,9 +1,9 @@
 package main.java.list.OperacoesBasicas;
 
-public class TarefaList {
+public class Tarefa {
     private String descricao;
 
-    public TarefaList(String descricao) {
+    public Tarefa(String descricao) {
         this.descricao = descricao;
     }
 

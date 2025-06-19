@@ -1,10 +1,10 @@
 package main.java.set.Pesquisa;
 
-public class TarefaSet {
+public class Tarefa {
     private String descricao;
     private boolean concluido;
 
-    public TarefaSet(String descricao, boolean concluido) {
+    public Tarefa(String descricao, boolean concluido) {
         this.descricao = descricao;
         this.concluido = concluido;
     }
@@ -46,7 +46,7 @@ public class TarefaSet {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        TarefaSet other = (TarefaSet) obj;
+        Tarefa other = (Tarefa) obj;
         if (descricao == null) {
             if (other.descricao != null)
                 return false;

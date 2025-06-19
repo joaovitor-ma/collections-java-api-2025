@@ -4,37 +4,37 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ListaTarefas {
-    private Set<TarefaSet> tarefaSet;
+    private Set<Tarefa> tarefa;
 
     public ListaTarefas() {
-        this.tarefaSet = new HashSet<>();
+        this.tarefa = new HashSet<>();
     }
 
     public void adicionarTarefa(String tarefa, boolean concluido) {
-        tarefaSet.add(new TarefaSet(tarefa, concluido));
+        this.tarefa.add(new Tarefa(tarefa, concluido));
     }
 
     public void removerTarefa(String tarefa) {
-        TarefaSet tarefaParaRemover = null;
-        for(TarefaSet t : tarefaSet) {
+        Tarefa tarefaParaRemover = null;
+        for(Tarefa t : this.tarefa) {
             if(t.getDescricao().equals(tarefa)) {
                 tarefaParaRemover = t;
             }
         }
-        tarefaSet.remove(tarefaParaRemover);
+        this.tarefa.remove(tarefaParaRemover);
     }
 
     public void exibirTarefas() {
-        System.out.println(tarefaSet);
+        System.out.println(tarefa);
     }
 
     public void contarTarefas() {
-        System.out.println(tarefaSet.size());
+        System.out.println(tarefa.size());
     }
 
-    public Set<TarefaSet> obterTarefasConcluidas() {
-        Set<TarefaSet> tarefasConcluidas = new HashSet<>();
-        for(TarefaSet t : tarefaSet) {
+    public Set<Tarefa> obterTarefasConcluidas() {
+        Set<Tarefa> tarefasConcluidas = new HashSet<>();
+        for(Tarefa t : tarefa) {
             if(t.isConcluido() == true) {
                 tarefasConcluidas.add(t);
             }
@@ -42,9 +42,9 @@ public class ListaTarefas {
         return tarefasConcluidas;
     }
 
-    public Set<TarefaSet> obterTarefasPendentes() {
-        Set<TarefaSet> tarefasPendentes = new HashSet<>();
-        for(TarefaSet t : tarefaSet) {
+    public Set<Tarefa> obterTarefasPendentes() {
+        Set<Tarefa> tarefasPendentes = new HashSet<>();
+        for(Tarefa t : tarefa) {
             if(t.isConcluido() == false) {
                 tarefasPendentes.add(t);
             }
@@ -53,7 +53,7 @@ public class ListaTarefas {
     }
 
     public void marcarTarefaConcluida(String descricao) {
-        for(TarefaSet t : tarefaSet) {
+        for(Tarefa t : tarefa) {
             if(t.getDescricao().equals(descricao)) {
                 t.setConcluido(true);
             }
@@ -61,7 +61,7 @@ public class ListaTarefas {
     }
 
     public void marcarTarefaPendente(String descricao) {
-        for(TarefaSet t : tarefaSet) {
+        for(Tarefa t : tarefa) {
             if(t.getDescricao().equals(descricao)) {
                 t.setConcluido(false);
             }
@@ -69,7 +69,7 @@ public class ListaTarefas {
     }
 
     public void limparListaTarefas() {
-        tarefaSet.clear();
+        tarefa.clear();
     }
 
     public static void main(String[] args) {
